@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Frogger</title>
+		<style>
+			body {
+				background-color: black;
+			}
+			#gameCanvas {
+				background-color: lightblue;
+				width: 600px;
+				height: 500px;
+				margin: auto;
+				align: center;
+			}
+			#scoreboard {
+				text-align: center;
+				font-family: Segoe UI, Helvetica, Ubuntu, sans-serif;
+				color: white;
+			}
+			#restart {
+				font-size:200%;
+				padding:0;
+				margin:0;
+				color: white;
+			}
+			#scores {
+				font-size:200%;
+				padding:0;
+				margin:0;
+				color: white;
+			}
+			#title {
+				background-color: yellow;
+				color: green;
+			}
+		</style>
+	</head>
+	<body onload='setup();'>
+		<div id='gameCanvas'></div>
+		<script src='./scripts/three.min.js'></script>
+		<script src='./scripts/keyhandle.js'></script>
+		<script src='./scripts/game.js'></script>
+		<script src='./scripts/objects.js'></script>
+		<div id='scoreboard'>
+			<h1 id='restart'></h1>
+			<h1 id='scores'>"Current Score = 0, Max Score = 0"</h1>
+			<h1 id='title'>FROGGER</h1>
+			<h3>a - jump left </h3>
+			<h3>d - jump right </h3>
+			<h3>w - jump forward </h3>
+			<h3>s - jump back</h3>
+			<h3>r - Restart</h3>
+		</div>
+	</body>
+</html>
