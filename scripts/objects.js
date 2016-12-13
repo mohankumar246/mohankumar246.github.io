@@ -25,45 +25,6 @@ var left_or_right    = [-1,-1,1,-1,1,-1,-1,1,-1,1];
 var object_set_prev_pos;
 var object_set;
 
-function set_vertices(geometry, left_flag)
-{
-	geometry.faceVertexUvs[0] = [];
-
-		geometry.faceVertexUvs[0][0] = [ car_front[0],car_front[2],car_front[3] ];
-		geometry.faceVertexUvs[0][1] = [ car_front[1],car_front[2],car_front[3] ];
-
-		geometry.faceVertexUvs[0][2] = [ car_side[0],car_side[2],car_side[3] ];
-		geometry.faceVertexUvs[0][3] = [ car_side[1],car_side[2],car_side[3] ];
-
-		geometry.faceVertexUvs[0][4] = [ car_back[0],car_back[2],car_back[3] ];
-		geometry.faceVertexUvs[0][5] = [ car_back[1],car_back[2],car_back[3] ];
-
-		geometry.faceVertexUvs[0][6] = [ car_side[0],car_side[2],car_side[3] ];
-		geometry.faceVertexUvs[0][7] = [ car_side[1],car_side[2],car_side[3] ];
-
-		geometry.faceVertexUvs[0][8] = [ car_top[0],car_top[2],car_top[3] ];
-		geometry.faceVertexUvs[0][9] = [ car_top[1],car_top[2],car_top[3] ];
-
-		geometry.faceVertexUvs[0][10] = [ car_top[0],car_top[2],car_top[3] ];
-		geometry.faceVertexUvs[0][11] = [ car_top[1],car_top[2],car_top[3] ];
-		/*
-		geometry.faceVertexUvs[0][2] = [ car_front[0],car_front[2],car_front[3] ];
-		geometry.faceVertexUvs[0][3] = [ car_front[1],car_front[2],car_front[3] ];
-
-		geometry.faceVertexUvs[0][4] = [ car_front[0],car_front[2],car_front[3] ];
-		geometry.faceVertexUvs[0][5] = [ car_front[1],car_front[2],car_front[3] ];
-
-		geometry.faceVertexUvs[0][6] = [ car_front[0],car_front[2],car_front[3] ];
-		geometry.faceVertexUvs[0][7] = [ car_front[1],car_front[2],car_front[3] ];
-
-		geometry.faceVertexUvs[0][8] = [ car_front[0],car_front[2],car_front[3] ];
-		geometry.faceVertexUvs[0][9] = [ car_front[1],car_front[2],car_front[3] ];
-
-		geometry.faceVertexUvs[0][10] = [ car_front[0],car_front[2],car_front[3] ];
-		geometry.faceVertexUvs[0][11] = [ car_front[1],car_front[2],car_front[3] ];
-*/
-	return geometry;
-}
 function createObjects()
 {
 	origin_x = -half_fieldWidth + road_size;
@@ -155,7 +116,7 @@ function createObjects()
 			for(obj_idx=0;obj_idx < obj_col_num[row].length; obj_idx=obj_idx+1)
 			{
 				object_set_prev_pos[row][obj_idx] = (obj_col_num[row][obj_idx]*road_size);
-				var log_obj = new THREE.Mesh(log_geo, log_mat);
+				var log_obj = new THREE.Mesh(log_geo, log_material);
 				log_obj.position.x = -(fieldHeight/2) + (row+2)*road_size + log_width;
 				log_obj.position.y = object_set_prev_pos[row][obj_idx] - (fieldHeight/2) + log_height;
 				log_obj.position.z = log_depth;
@@ -171,7 +132,7 @@ function createObjects()
 			for(obj_idx=0;obj_idx < obj_col_num[row].length; obj_idx=obj_idx+1)
 			{
 				object_set_prev_pos[row][obj_idx] = (obj_col_num[row][obj_idx]*road_size);
-				var bus_obj = new THREE.Mesh(bus_geo, bus_mat);
+				var bus_obj = new THREE.Mesh(bus_geo, truck_material);
 				bus_obj.position.x = -(fieldHeight/2) + (row+1)*road_size + bus_width;
 				bus_obj.position.y = object_set_prev_pos[row][obj_idx] - (fieldHeight/2) + bus_height;
 				bus_obj.position.z = bus_depth;
@@ -187,7 +148,7 @@ function createObjects()
 			for(obj_idx=0;obj_idx < obj_col_num[row].length; obj_idx=obj_idx+1)
 			{
 				object_set_prev_pos[row][obj_idx] = (obj_col_num[row][obj_idx]*road_size);
-				var turtle_obj = new THREE.Mesh(turtle_geo, turtle_mat);
+				var turtle_obj = new THREE.Mesh(turtle_geo, turtle_material);
 				turtle_obj.position.x = -(fieldHeight/2) + (row+2)*road_size + turtle_width;
 				turtle_obj.position.y = object_set_prev_pos[row][obj_idx] - (fieldHeight/2)  + turtle_height;
 				turtle_obj.position.z = turtle_depth;
