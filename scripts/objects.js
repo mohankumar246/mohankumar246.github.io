@@ -31,7 +31,7 @@ function set_vertices(geometry, left_flag)
 
 		geometry.faceVertexUvs[0][0] = [ car_front[0],car_front[2],car_front[3] ];
 		geometry.faceVertexUvs[0][1] = [ car_front[1],car_front[2],car_front[3] ];
-
+/*
 		geometry.faceVertexUvs[0][2] = [ car_side[0],car_side[2],car_side[3] ];
 		geometry.faceVertexUvs[0][3] = [ car_side[1],car_side[2],car_side[3] ];
 
@@ -46,6 +46,21 @@ function set_vertices(geometry, left_flag)
 
 		geometry.faceVertexUvs[0][10] = [ car_top[0],car_top[2],car_top[3] ];
 		geometry.faceVertexUvs[0][11] = [ car_top[1],car_top[2],car_top[3] ];
+		*/
+		geometry.faceVertexUvs[0][2] = [ car_front[0],car_front[2],car_front[3] ];
+		geometry.faceVertexUvs[0][3] = [ car_front[1],car_front[2],car_front[3] ];
+
+		geometry.faceVertexUvs[0][4] = [ car_front[0],car_front[2],car_front[3] ];
+		geometry.faceVertexUvs[0][5] = [ car_front[1],car_front[2],car_front[3] ];
+
+		geometry.faceVertexUvs[0][6] = [ car_front[0],car_front[2],car_front[3] ];
+		geometry.faceVertexUvs[0][7] = [ car_front[1],car_front[2],car_front[3] ];
+
+		geometry.faceVertexUvs[0][8] = [ car_front[0],car_front[2],car_front[3] ];
+		geometry.faceVertexUvs[0][9] = [ car_front[1],car_front[2],car_front[3] ];
+
+		geometry.faceVertexUvs[0][10] = [ car_front[0],car_front[2],car_front[3] ];
+		geometry.faceVertexUvs[0][11] = [ car_front[1],car_front[2],car_front[3] ];
 
 	return geometry;
 }

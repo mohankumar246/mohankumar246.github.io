@@ -32,11 +32,13 @@ function loadtextures()
    truck_material  = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('https://mohankumar246.github.io/images/truck.png') } );
    frog_material   = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('https://mohankumar246.github.io/images/frog.png') } );
    log_material    = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('https://mohankumar246.github.io/images/log.png') } );
-
+/*
    car_front   = [new THREE.Vector2(0, .832),	new THREE.Vector2(0.407, 0.832), new THREE.Vector2(0.407, 0.41), new THREE.Vector2(0, 0.41)];
    car_top     = [new THREE.Vector2(0.419, 0.997),	new THREE.Vector2(.746, .997), new THREE.Vector2(0.746, 0.435), new THREE.Vector2(0.419, 0.435)];
    car_back    = [new THREE.Vector2(0.560, 0.666),	new THREE.Vector2(0.99, 0.422), new THREE.Vector2(.99, 0.011), new THREE.Vector2(0.56, 0.011)];
    car_side    = [new THREE.Vector2(0, .411),	new THREE.Vector2(0.561, 0.411), new THREE.Vector2(.561, 0), new THREE.Vector2(0, 0)];
+*/
+   car_front   = [new THREE.Vector2(0,0),	new THREE.Vector2(1,0), new THREE.Vector2(1,1), new THREE.Vector2(0, 1)];
 
    var grass_tex = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('https://mohankumar246.github.io/images/grass.jpg') } );
    var road_tex = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture( 'https://mohankumar246.github.io/images/road.jpg') } );
