@@ -16,31 +16,31 @@ var life = 3;
 var plane;
 
 //music
-var roadkill = new Audio('sounds/roadkill.mp3');
-var jump = new Audio('sounds/jump.mp3');
-var success = new Audio('sounds/success.mp3');
-var drown = new Audio('sounds/drown.mp3');
-var start = new Audio('sounds/start.wav');
+var roadkill = new Audio('https://mohankumar246.github.io/sounds/roadkill.mp3');
+var jump = new Audio('https://mohankumar246.github.io/sounds/jump.mp3');
+var success = new Audio('https://mohankumar246.github.io/sounds/success.mp3');
+var drown = new Audio('https://mohankumar246.github.io/sounds/drown.mp3');
+var start = new Audio('https://mohankumar246.github.io/sounds/start.wav');
 
 var log_material,car_material,truck_material,frog_material,turtle_material,grass_material,water_material,road_material;
 var car_front,car_top, car_side, car_back;
 
 function loadtextures()
 {
-   car_material    = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('images/car.png') } );
-   turtle_material = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('images/turtle.png') } );
-   truck_material  = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('images/truck.png') } );
-   frog_material   = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('images/frog.png') } );
-   log_material    = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('images/log.png') } );
+   car_material    = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('https://mohankumar246.github.io/images/car.png') } );
+   turtle_material = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('https://mohankumar246.github.io/images/turtle.png') } );
+   truck_material  = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('https://mohankumar246.github.io/images/truck.png') } );
+   frog_material   = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('https://mohankumar246.github.io/images/frog.png') } );
+   log_material    = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('https://mohankumar246.github.io/images/log.png') } );
 
    car_front   = [new THREE.Vector2(0, .832),	new THREE.Vector2(0.407, 0.832), new THREE.Vector2(0.407, 0.41), new THREE.Vector2(0, 0.41)];
    car_top     = [new THREE.Vector2(0.419, 0.997),	new THREE.Vector2(.746, .997), new THREE.Vector2(0.746, 0.435), new THREE.Vector2(0.419, 0.435)];
    car_back    = [new THREE.Vector2(0.560, 0.666),	new THREE.Vector2(0.99, 0.422), new THREE.Vector2(.99, 0.011), new THREE.Vector2(0.56, 0.011)];
    car_side    = [new THREE.Vector2(0, .411),	new THREE.Vector2(0.561, 0.411), new THREE.Vector2(.561, 0), new THREE.Vector2(0, 0)];
 
-   var grass_tex = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('images/grass.jpg') } );
-   var road_tex = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('images/road.jpg') } );
-   var water_tex = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('images/water.jpg') } );
+   var grass_tex = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('https://mohankumar246.github.io/images/grass.jpg') } );
+   var road_tex = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture( 'https://mohankumar246.github.io/images/road.jpg') } );
+   var water_tex = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('https://mohankumar246.github.io/images/water.jpg') } );
 
    grass_material = new THREE.MeshBasicMaterial({ map: grass_tex });
    road_material  = new THREE.MeshBasicMaterial({ map: road_tex  });
