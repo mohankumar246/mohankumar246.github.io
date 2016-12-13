@@ -61,8 +61,8 @@ function setup()
     document.onkeyup    = handleKeyUp;
 
 	// set up all the 3D objects in the scene
-	createScene();
 	loadtextures();
+	createScene();
 	createObjects();
 	restart();
 	draw();
