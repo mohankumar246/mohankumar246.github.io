@@ -96,7 +96,7 @@ function createObjects()
 	car_geo = new THREE.CubeGeometry(
 				car_width,
 				car_height,
-				car_depth);
+				car_depth,1,1,1);
 
 	bus_geo = new THREE.CubeGeometry(
 				bus_width,
@@ -138,7 +138,7 @@ function createObjects()
 			for(obj_idx=0;obj_idx < obj_col_num[row].length; obj_idx=obj_idx+1)
 			{
 				object_set_prev_pos[row][obj_idx] = (obj_col_num[row][obj_idx]*road_size);
-				car_geo = set_vertices(car_geo);
+				//car_geo = set_vertices(car_geo);
 				var car_obj = new THREE.Mesh(car_geo, car_material);
 				car_obj.position.x = -(fieldHeight/2) + (row+1)*road_size + car_width;
 				car_obj.position.y = object_set_prev_pos[row][obj_idx] - (fieldHeight/2) + car_height;

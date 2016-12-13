@@ -28,13 +28,13 @@ var car_front,car_top, car_side, car_back;
 function loadtextures()
 {
 
-   THREE.ImageUtils.crossOrigin = '';
-   car_material    = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('https://mohankumar246.github.io/images/car.png') } );
-   turtle_material = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('https://mohankumar246.github.io/images/turtle.png') } );
+   //THREE.ImageUtils.crossOrigin = '';
+   car_material    = new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture('https://mohankumar246.github.io/images/car.png') } );
+   /*turtle_material = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('https://mohankumar246.github.io/images/turtle.png') } );
    truck_material  = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('https://mohankumar246.github.io/images/truck.png') } );
    frog_material   = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('https://mohankumar246.github.io/images/frog.png') } );
    log_material    = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('https://mohankumar246.github.io/images/log.png') } );
-
+*/
    car_front   = [new THREE.Vector2(0, .832),	new THREE.Vector2(0.407, 0.832), new THREE.Vector2(0.407, 0.41), new THREE.Vector2(0, 0.41)];
    car_top     = [new THREE.Vector2(0.419, 0.997),	new THREE.Vector2(.746, .997), new THREE.Vector2(0.746, 0.435), new THREE.Vector2(0.419, 0.435)];
    car_back    = [new THREE.Vector2(0.560, 0.666),	new THREE.Vector2(0.99, 0.422), new THREE.Vector2(.99, 0.011), new THREE.Vector2(0.56, 0.011)];
