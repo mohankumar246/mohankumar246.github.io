@@ -30,29 +30,6 @@ function createObjects()
 	origin_x = -half_fieldWidth + road_size;
 	origin_y = half_fieldWidth ;
 
-	var car_mat =
-		new THREE.MeshLambertMaterial(
-			{
-			  color: 0xff0000
-		    });
-
-	var bus_mat =
-		new THREE.MeshLambertMaterial(
-			{
-			  color: 0xff0000
-	    });
-
-	var log_mat =
-		new THREE.MeshLambertMaterial(
-			{
-			  color: 0xff0000
-	    });
-
-	var turtle_mat =
-			new THREE.MeshLambertMaterial(
-				{
-				  color: 0xff0000
-	 });
 
 	car_geo = new THREE.CubeGeometry(
 				car_width,

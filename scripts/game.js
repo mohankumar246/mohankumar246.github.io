@@ -34,13 +34,86 @@ function loadtextures()
    frog_material   = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('https://mohankumar246.github.io/images/frog.png') } );
    log_material    = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('https://mohankumar246.github.io/images/log.png') } );
 
-   var grass_tex = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('https://mohankumar246.github.io/images/grass.jpg') } );
-   var road_tex = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture( 'https://mohankumar246.github.io/images/road.jpg') } );
-   var water_tex = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('https://mohankumar246.github.io/images/water.jpg') } );
+   grass_material = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('https://mohankumar246.github.io/images/grass.jpg') } );
+   road_material = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture( 'https://mohankumar246.github.io/images/road.jpg') } );
+   water_material = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('https://mohankumar246.github.io/images/water.jpg') } );
+   road_material.wrapS = road_material.wrapT = THREE.RepeatWrapping;
+   //road_material.repeat.set( 2, 2 );
+   road_material.wrapAround = true;
+}
 
-   grass_material = new THREE.MeshBasicMaterial({ map: grass_tex });
-   road_material  = new THREE.MeshBasicMaterial({ map: road_tex  });
-   water_material= new THREE.MeshBasicMaterial({ map: water_tex });
+function surface_cubes()
+{
+
+		var road  = new THREE.Mesh(
+				  new THREE.CubeGeometry(
+					road_size*5,
+					fieldHeight,
+					10,
+					1,
+					1,
+					1),
+	    			road_material);
+		road.position.z = -5;
+		road.position.x = -260;
+		road.receiveShadow = true;
+
+		scene.add(road);
+
+	    var water  = new THREE.Mesh(
+				  new THREE.CubeGeometry(
+					road_size*5,
+					fieldHeight,
+					10,
+					1,
+					1,
+					1),
+	    			water_material);
+	    water.position.z = -5;
+		road.position.x = 120;
+		water.receiveShadow = true;
+		//scene.add(water);
+
+	    var grass1  = new THREE.Mesh(
+				  new THREE.CubeGeometry(
+					road_size,
+					fieldHeight,
+					10,
+					1,
+					1,
+					1),
+	    			grass_material);
+	    grass1.position.z = -5;
+		grass1.position.x = -240;
+		grass1.receiveShadow = true;
+		//scene.add(grass1);
+
+	    var grass2  = new THREE.Mesh(
+				  new THREE.CubeGeometry(
+					road_size,
+					fieldHeight,
+					10,
+					1,
+					1,
+					1),
+	    			grass_material);
+	    grass2.position.z = -5;
+	    grass2.receiveShadow = true;
+	    //scene.add(grass2);
+
+	    var grass3  = new THREE.Mesh(
+				  new THREE.CubeGeometry(
+					road_size,
+					fieldHeight,
+					10,
+					1,
+					1,
+					1),
+	    			grass_material);
+	    grass3.position.z = -5;
+	    grass3.position.x = 240;
+		grass3.receiveShadow = true;
+		//scene.add(grass3);
 }
 
 function restart()
@@ -63,6 +136,7 @@ function setup()
 	// set up all the 3D objects in the scene
 	loadtextures();
 	createScene();
+	surface_cubes();
 	createObjects();
 	restart();
 	draw();
@@ -124,18 +198,20 @@ function createScene()
 		  color: 0x4BD121
 		});
 
-    var  plane_geo = new THREE.PlaneGeometry(
-		planeWidth,
-		planeHeight,
-		planeQuality,
-		planeQuality);
 
-	// create the playing surface plane
-	plane = new THREE.Mesh(
-			    plane_geo,
-  	            planeMaterial);
+	plane  = new THREE.Mesh(
+			  new THREE.CubeGeometry(
+				planeWidth,
+				planeHeight,
+				planeHeight,
+				frogQuality,
+				frogQuality,
+				frogQuality),
+	    road_material);
 
-	scene.add(plane);
+
+	plane.position.z = -planeHeight/2;
+	//scene.add(plane);
 	plane.receiveShadow = true;
 
 	frogWidth = 20;
@@ -179,7 +255,7 @@ function createScene()
 	// this is important for casting shadows
     spotLight = new THREE.SpotLight(0xF8D898);
     spotLight.position.set(0, 0, 460);
-    spotLight.intensity = 1.5;
+    spotLight.intensity = 0.5;
     spotLight.castShadow = true;
     scene.add(spotLight);
 
