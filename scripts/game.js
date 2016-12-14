@@ -55,9 +55,8 @@ function surface_cubes()
 					1),
 	    			road_material);
 		road.position.z = -5;
-		road.position.x = -260;
+		road.position.x = -120;
 		road.receiveShadow = true;
-
 		scene.add(road);
 
 	    var water  = new THREE.Mesh(
@@ -70,9 +69,9 @@ function surface_cubes()
 					1),
 	    			water_material);
 	    water.position.z = -5;
-		road.position.x = 120;
+		water.position.x = 120;
 		water.receiveShadow = true;
-		//scene.add(water);
+		scene.add(water);
 
 	    var grass1  = new THREE.Mesh(
 				  new THREE.CubeGeometry(
@@ -86,7 +85,7 @@ function surface_cubes()
 	    grass1.position.z = -5;
 		grass1.position.x = -240;
 		grass1.receiveShadow = true;
-		//scene.add(grass1);
+		scene.add(grass1);
 
 	    var grass2  = new THREE.Mesh(
 				  new THREE.CubeGeometry(
@@ -99,7 +98,7 @@ function surface_cubes()
 	    			grass_material);
 	    grass2.position.z = -5;
 	    grass2.receiveShadow = true;
-	    //scene.add(grass2);
+	    scene.add(grass2);
 
 	    var grass3  = new THREE.Mesh(
 				  new THREE.CubeGeometry(
