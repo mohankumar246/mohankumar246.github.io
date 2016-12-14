@@ -275,7 +275,7 @@ function draw()
 		if(row != 12)
 			document.getElementById("restart").innerHTML = "Game over, Press 'r' to restart";
 		else
-			document.getElementById("restart").innerHTML = "Sucess! Press 'r' to restart";
+			document.getElementById("restart").innerHTML = "Success! Press 'r' to restart";
 	}
 	document.getElementById("scores").innerHTML = "Lives = " + life+", Current Score = " + score +", Max Score = " + max_score ;
 	cameraSet();
