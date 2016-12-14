@@ -44,7 +44,6 @@ function loadtextures()
 
 function surface_cubes()
 {
-
 		var road  = new THREE.Mesh(
 				  new THREE.CubeGeometry(
 					road_size*5,
