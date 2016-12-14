@@ -112,7 +112,7 @@ function surface_cubes()
 	    grass3.position.z = -5;
 	    grass3.position.x = 240;
 		grass3.receiveShadow = true;
-		//scene.add(grass3);
+		scene.add(grass3);
 }
 
 function restart()
